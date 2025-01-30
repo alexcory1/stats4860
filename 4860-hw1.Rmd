@@ -1,18 +1,19 @@
 # Stats 4860 Homework 1
 
-## Question 1: Volume and Surface Area of Sphere
+## Problem 1: Volume and Surface Area of Sphere
 
 ```{r}
 sphere_radius <- 4
 sphere_volume <- 4/3*pi*sphere_radius^3
 sphere_surface_area <- 4*pi*sphere_radius^2
 
-cat("The volume of a sphere with radius 4 is ", sphere_volume, " and the surface area is ", sphere_surface_area)
+cat("1. The volume of a sphere with radius 4 is ", sphere_volume, 
+    "\n2. The surface area is ", sphere_surface_area)
 ```
 
-## Question 2: 
+## Problem 2: Binomial
 
-### 2.1: Y ~ Binom(10, .3), P(Y=4)
+### Y ~ Binom(10, .3), P(Y=4)
 
 ```{r}
 n <- 10
@@ -23,7 +24,7 @@ q2_y4_binom <- dbinom(4,n,p) #P(Y=4)
 cat('P(Y=4) = ', q2_y4_binom)
 ```
 
-### 2.2: Y ~ Binom(10, .3), P(Y<=5)
+### Y ~ Binom(10, .3), P(Y<=5)
 
 ```{r}
 q2_y_leq_5_binom <- pbinom(5,n,p) #P(Y<=5)
@@ -31,7 +32,7 @@ q2_y_leq_5_binom <- pbinom(5,n,p) #P(Y<=5)
 cat('P(Y<=5) = ', q2_y_leq_5_binom)
 ```
 
-### 2.3: Y ~ Binom(52, .5), P(Y=26)
+### Y ~ Binom(52, .5), P(Y=26)
 
 ```{r}
 deck_n <- 52
@@ -39,13 +40,42 @@ deck_p <- .5
 
 deck_dbinom <- dbinom(26,deck_n, deck_p)
 
-cat('P(Y=26) = ', deck_dbinom)
+cat('3. P(Y=26) = ', deck_dbinom)
 ```
 
-### 2.4: Y ~ Binom(52, .5), P(23 < Y < 28)
+### Y ~ Binom(52, .5), P(23 < Y < 28)
 
 ```{r}
 deck_pbinom <- pbinom(27, deck_n, deck_p) - pbinom(23, deck_n, deck_p)
 
-cat('P(23 < Y < 28) = ', deck_pbinom)
+cat('4. P(23 < Y < 28) = ', deck_pbinom)
 ```
+
+
+## Problem 3: Normal
+
+### X ~ N(2,3^2)
+
+```{r}
+mu <- 2
+sigma <- 3
+
+q3.1_normal_cdf <- pnorm(4,mean = mu, sd = sigma) #P(X<4)
+
+cat('P(X<4) = ', q3.1_normal_cdf)
+```
+
+### Salaries for Statistics Majors
+
+```{r}
+stats_mu <- 68000
+stats_sd <- 15000
+
+stats_salary_50000 <- pnorm(50000,stats_mu, sd = stats_sd)
+cat('5. The probability the starting salary of a Statistics being below 50000 is', stats_salary_50000)
+
+stats_salary_range <- pnorm(70000,stats_mu, sd = stats_sd) - pnorm(60000,stats_mu, sd = stats_sd)
+cat('5. The probability the starting salary of a Statistics being between 60-70k is', stats_salary_range)
+
+```
+
