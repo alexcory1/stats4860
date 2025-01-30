@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Stats 4860 Homework 1
 
 ## Problem 1: Volume and Surface Area of Sphere
@@ -117,7 +122,7 @@ Identify the data type:
 
 13. How many class periods you will attend STAT 4860/5860 this semester: Count with known max, because it can be any whole number between 0 and the total number of classes this semester.
 
-14. Number of α-particles hitting a detector in 1 min: Count with no known maximum, because it has to be a whole number, but it could be any whole number
+14. Number of a-particles hitting a detector in 1 min: Count with no known maximum, because it has to be a whole number, but it could be any whole number
 
 15. Responses to a question that asks “How much do you agree with this statement?” when
 the possible responses are Strongly Disagree, Disagree, Neither agree nor disagree, Agree,
