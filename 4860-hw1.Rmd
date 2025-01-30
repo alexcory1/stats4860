@@ -1,0 +1,8 @@
+
+# Question 1: Volume and Surface Area of Sphere
+
+```{r}
+sphere_radius <- 4
+sphere_volume <- 4/3*pi*sphere_radius^3
+sphere_surface_area <- 4*pi*sphere_radius^2
+```
