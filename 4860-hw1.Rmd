@@ -75,7 +75,14 @@ stats_salary_50000 <- pnorm(50000,stats_mu, sd = stats_sd)
 cat('5. The probability the starting salary of a Statistics being below 50000 is', stats_salary_50000)
 
 stats_salary_range <- pnorm(70000,stats_mu, sd = stats_sd) - pnorm(60000,stats_mu, sd = stats_sd)
-cat('5. The probability the starting salary of a Statistics being between 60-70k is', stats_salary_range)
+cat('6. The probability the starting salary of a Statistics being between 60-70k is', stats_salary_range)
 
+```
+
+### Critical Value for 70% Confidence Interval
+```{r}
+alpha <- 0.3
+cv70 <- -qnorm(alpha/2)
+cat("7. The critical value for a 70% confidence interval is", cv70)
 ```
 
