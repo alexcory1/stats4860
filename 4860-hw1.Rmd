@@ -86,3 +86,39 @@ cv70 <- -qnorm(alpha/2)
 cat("7. The critical value for a 70% confidence interval is", cv70)
 ```
 
+## Problem 4: Data 
+
+Identify the data type:
+<br></br>
+
+* Categorical
+  + Binary
+  + Nominal
+  + Ordinal
+  
+* Quantitative
+  + Continuous
+  + Discrete
+    - Binary
+    - Count with known maximum
+    - Count with no known maximum
+  <br></br>
+  <br></br>
+
+8. Political party for particular candidate: Either Categorical Binary or Nominal depending on if there are 2 or more political parties.
+
+9. Cost of supreme gas tomorrow at West Hy-vee Pump: Continuous, because it can be any number on the real number line.
+
+10. Whether or not you will win the next board game you play: Categorical Binary, because the outcomes are either win or lose.
+
+11. Distance I will drive my car in 2023: Continuous, because it can be any number on the real number line, including decimal values.
+
+12. Number of days in June Over 90 degrees Fahrenheit: Count with known max, because it can be any whole number 1-30.
+
+13. How many class periods you will attend STAT 4860/5860 this semester: Count with known max, because it can be any whole number between 0 and the total number of classes this semester.
+
+14. Number of α-particles hitting a detector in 1 min: Count with no known maximum, because it has to be a whole number, but it could be any whole number
+
+15. Responses to a question that asks “How much do you agree with this statement?” when
+the possible responses are Strongly Disagree, Disagree, Neither agree nor disagree, Agree,
+and Strongly Agree: Ordinal because they are categorical values with an order.
