@@ -1,8 +1,51 @@
+# Stats 4860 Homework 1
 
-# Question 1: Volume and Surface Area of Sphere
+## Question 1: Volume and Surface Area of Sphere
 
 ```{r}
 sphere_radius <- 4
 sphere_volume <- 4/3*pi*sphere_radius^3
 sphere_surface_area <- 4*pi*sphere_radius^2
+
+cat("The volume of a sphere with radius 4 is ", sphere_volume, " and the surface area is ", sphere_surface_area)
+```
+
+## Question 2: 
+
+### 2.1: Y ~ Binom(10, .3), P(Y=4)
+
+```{r}
+n <- 10
+p <- .3
+
+q2_y4_binom <- dbinom(4,n,p) #P(Y=4)
+
+cat('P(Y=4) = ', q2_y4_binom)
+```
+
+### 2.2: Y ~ Binom(10, .3), P(Y<=5)
+
+```{r}
+q2_y_leq_5_binom <- pbinom(5,n,p) #P(Y<=5)
+
+cat('P(Y<=5) = ', q2_y_leq_5_binom)
+```
+
+### 2.3: Y ~ Binom(52, .5), P(Y=26)
+
+```{r}
+deck_n <- 52
+deck_p <- .5
+
+deck_dbinom <- dbinom(26,deck_n, deck_p)
+
+cat('P(Y=26) = ', deck_dbinom)
+```
+
+### 2.4: Y ~ Binom(52, .5), P(23 < Y < 28)
+
+```{r}
+deck_pbinom <- pbinom(27, deck_n, deck_p) - pbinom(23, deck_n, deck_p)
+
+cat('P(23 < Y < 28) = ', deck_pbinom)
 ```
