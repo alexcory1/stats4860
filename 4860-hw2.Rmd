@@ -1,0 +1,39 @@
+# Stats 4860 Homework 2: Data Visualization
+## 2/10/2025
+
+```{r, include=FALSE}
+library(ggplot2)
+```
+
+```{r}
+# Code to create your plot
+g <- ggplot(data = data.frame(normals = rnorm(10))) +
+geom_histogram(mapping = aes(x = normals))
+# Code to save your plot
+ggsave(plot = g,
+filename = "filename.jpeg",
+width = 6,
+height = 4)
+# Plots can be found here
+getwd()
+```
+
+```{r}
+head(iris)
+q1 <- ggplot(iris, aes(x = Petal.Length, y = Petal.Width, shape = Species, color = Sepal.Length)) +
+  geom_point(size = 3) +
+  labs(
+    title = "Iris Data Collected by Edgar Anderson (1936)",
+    x = "Petal Length (cm)",
+    y = "Petal Width (cm)",
+    color = "Sepal Length (cm)",
+    shape = "Species"
+  ) +
+  scale_x_continuous(limits = c(0, 8)) +
+  scale_y_continuous(limits = c(0, 3))
+
+ggsave(plot = q1,
+filename = "petal-length-by-petal-width.jpeg",
+width = 6,
+height = 4)
+```
