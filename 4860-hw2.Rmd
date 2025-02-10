@@ -3,6 +3,7 @@
 
 ```{r, include=FALSE}
 library(ggplot2)
+library(dplyr)
 ```
 
 ```{r}
@@ -36,4 +37,18 @@ ggsave(plot = q1,
 filename = "petal-length-by-petal-width.jpeg",
 width = 6,
 height = 4)
+```
+
+```{r}
+ggplot(Indometh, aes(x = time, y = conc)) +
+  geom_point() +
+  facet_wrap(~ Subject) +
+  scale_x_log10() +
+  scale_y_log10() +
+  labs(
+    title = "Indomethacin Concentration Over Time by Subject",
+    x = "Time (hours)",
+    y = "Concentration (mcg/mL)"
+  ) +
+  theme_minimal()
 ```
