@@ -40,7 +40,10 @@ height = 4)
 ```
 
 ```{r}
-ggplot(Indometh, aes(x = time, y = conc)) +
+Indometh <- Indometh %>%
+  mutate(Subject = paste("Subject:", Subject))
+
+q2 <- ggplot(Indometh, aes(x = time, y = conc)) +
   geom_point() +
   facet_wrap(~ Subject) +
   scale_x_log10() +
@@ -51,4 +54,26 @@ ggplot(Indometh, aes(x = time, y = conc)) +
     y = "Concentration (mcg/mL)"
   ) +
   theme_minimal()
+
+ggsave(plot = q2,
+filename = "Indomethacin-Concentration-Over-Time.jpeg",
+width = 6,
+height = 4)
+```
+
+```{r}
+q3 <- ggplot(diamonds, aes(x = price)) +
+  geom_histogram(bins = 100) +
+  facet_grid(cut ~ clarity, scales = "free_y") + 
+  scale_x_log10() + 
+  labs(
+    title = "Distribution of Diamond Prices by Cut and Clarity",
+    x = "Price (USD)", 
+    y = "Count"
+  ) +
+  theme_minimal()
+ggsave(plot = q3,
+filename = "diamond-cut-price.jpeg",
+width = 6,
+height = 4)
 ```
