@@ -1,0 +1,75 @@
+# Stats 4860
+## Homework 3: Graphics
+### Alex Cory
+
+```{r, include=FALSE}
+library(ggplot2)
+library(Sleuth3)
+library(ISLR2)
+```
+
+#### Question 1:
+```{r}
+longevity <- read.csv("longevity.csv", header = TRUE)
+
+diet_order <- c("NP", "N/N85", "N/R50", "N/R50 lopro", "R/R50", "N/R40")
+longevity$Diet <- factor(longevity$Diet, levels = diet_order)
+
+q1 <- ggplot(longevity, aes(x = Diet, y = Lifetime)) +
+  geom_violin(fill = "lightblue", color = "black") +
+  theme_minimal() +
+  labs(
+    title = "Violin Plot of Lifetime by Diet",
+    x = "Diet",
+    y = "Lifetime (Months)"
+  )
+q1
+ggsave(plot = q1,
+       filename = "Lifetime-Diet-Violins.jpeg",
+       width = 6,
+       height = 4)
+
+```
+
+#### Question 2:
+```{r}
+
+
+q2 <- ggplot(case0801, aes(x = Area, y = Species)) +
+  geom_point(color = "blue") +
+  scale_x_log10() + 
+  scale_y_log10() + 
+  labs(
+    title = "Scatterplot of Reptile and Amphibian Species by Area",
+    subtitle = "Reptile and Amphibian Population in the West Indies",
+    x = "Island Area In Square Miles",
+    y = "Number of Reptiles and Amphibian Species On Island"
+  ) +
+  stat_smooth(method = "lm", col = "red") + 
+  theme_minimal()
+q2
+
+ggsave(plot = q2,
+       filename = "Population-By-Area.jpeg",
+       width = 6,
+       height = 4)
+
+```
+
+```{r}
+q3 <- ggplot(Wage, aes(x = age, y = wage, color = education)) +
+  geom_point(alpha = 0.6) + # Scatter plot with transparency
+  labs(
+    title = "Wage Distribution by Age and Education Level",
+    x = "Age (Years)",
+    y = "Wage (Dollars per Hour)",
+    color = "Education Level"
+  ) +
+  theme_minimal()
+q3
+
+ggsave(plot = q3,
+       filename = "Wage-By-Age-Education.jpeg",
+       width = 6,
+       height = 4)
+```
